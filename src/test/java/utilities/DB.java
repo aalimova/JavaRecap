@@ -49,6 +49,10 @@ public class DB implements DBMethods{
         return resultSet = statement.executeQuery(query);
     }
 
+    public ResultSet runSelectQuery(String query, String tableName) throws SQLException {
+        return resultSet = statement.executeQuery(query);
+    }
+
     @Override
     public void runUpdateQuery(String query) throws SQLException {
              statement.executeUpdate(query);
