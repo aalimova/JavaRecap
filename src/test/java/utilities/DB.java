@@ -57,6 +57,7 @@ public class DB implements DBMethods{
     public void runUpdateQuery(String query) throws SQLException {
              statement.executeUpdate(query);
              System.out.println("DB was updated");
+        System.out.println("This line was add");
     }
 
     @Override
@@ -73,7 +74,7 @@ public class DB implements DBMethods{
     public ResultSet runSelectQuery(ArrayList<String> columnNames, String tableName) throws SQLException {
         String query = "select ";
         for(String cName: columnNames){
-            query = query + cName + ", ";
+            query += cName + ", ";
         }
         query = query.substring(0,query.length()-2);
         query = query + " from " + tableName;
